@@ -16,8 +16,6 @@
 //
 // Execute `rustlings hint box1` for hints :)
 
-// I AM NOT DONE
-
 #[derive(PartialEq, Debug)]
 pub enum List {
     Cons(i32, Box<List>),
@@ -33,13 +31,12 @@ fn main() {
 }
 
 pub fn create_empty_list() -> List {
-    List {}
+    List::Nil
 }
 
 pub fn create_non_empty_list() -> List {
-    List{Cons(i32, Box<List>),Nil}
+    List::Cons(0, Box::from(List::Nil))
 }
-
 #[cfg(test)]
 mod tests {
     use super::*;
